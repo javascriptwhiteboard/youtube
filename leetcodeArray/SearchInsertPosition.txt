@@ -1,0 +1,89 @@
+JavaScript Whiteboard#4
+
+Search Insert Position
+ 
+Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You may assume no duplicates in the array.
+
+
+
+
+
+[1,2,3,4,10] , target = 3 // index 2.
+
+Because the array is sorted -> The way we search faster is by using Binary Search.
+We calculate the middle index and based on the value, we will move the left pointer forward or right pointer backward until we find the target. 
+
+Binary search Time Complexity is LogN
+
+
+[1,2,5,8,10,3] , target = 3
+
+if target is not found, we could:
+
+1- push the target value, sort the array, get the target index.
+
+
+Const searchIndex = (nums, target)=>{
+
+ let left =0;
+ Let right = nums.length -1;
+ 
+ while(left <= right){
+
+    let middle = left + right / 2;
+
+    if(nums[middle] === target){
+         return index;
+     }
+   if( nums[middle] < target ){
+       left++;
+     }
+
+    if( nums[middle] > target ){
+       right--;
+     }
+  }
+
+ nums.push(target); //O(1)
+ nums.sort( (a,b) => a-b);//NLog
+ return nums.indexOf(target)//N
+
+}
+
+
+
+------
+
+
+Another Solution:
+
+------
+
+2- push the target, iterate backward.
+
+[1,2,3,3,3 ,3] , target = 3
+
+Const searchIndex = (nums,target)=>{
+
+  nums.push(target);
+  for(let i= nums.length -2;i>=0;i++){
+      if(nums[i] === target){
+          Return i;//2
+       }
+      if(nums[i] < target){
+         Return i+1;
+       }
+      else{
+          nums[i] = target;
+      }
+           
+   }
+  
+}
+
+Time Complexity O(N) // Linear.
+
+Thank you :)
+
+
