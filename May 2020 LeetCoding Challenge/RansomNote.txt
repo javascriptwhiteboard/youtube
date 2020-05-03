@@ -14,7 +14,7 @@ const canConstruct = function(ransomNote, magazine) {
 
    let charFreq = {};    
 
-   for(let char magazine){  
+   for(let char of magazine){  
 
         if(!charFreq[char]){
 
