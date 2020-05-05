@@ -1,0 +1,52 @@
+Number Complement
+ 
+Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.
+
+ 
+Input: 5
+Output: 2
+Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
+
+ 
+ 
+
+ 
+Input: 1
+Output: 0
+Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
+
+
+
+
+
+In JavaScript 
+
+Number.prototype.toString() 
+ 
+// method returns a string representing the specified Number object.
+
+
+toString(2) - makes binary value from number"
+let x = 6; console.log(x.toString(2)); //'110'
+
+
+const NumberComplement = (Number)=>{
+
+Let binary = Number.toString(2);//101
+Binary = binary.split(‘’).map(num=>{
+     Return num === 0 ? ‘1’ : ‘0’;
+}).join(‘’);// ‘010’
+
+return parseInt(binary,2);// 2
+}
+
+
+----------------------
+
+parseInt() parses up to the first non-digit and returns whatever it had parsed. in addition to this.
+
+parseInt(object, radix)
+
+
+The radix parameter is used to specify which numeral system to be used, for  example, a radix of 2 (binary) indicates that the number in the string  should be parsed from a binary number to a decimal number.
+
