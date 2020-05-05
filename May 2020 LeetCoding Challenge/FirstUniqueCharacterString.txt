@@ -1,0 +1,44 @@
+First Unique Character in a String
+
+Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+ 
+s = "leetcode"  
+
+//first character appears one time in the string?
+return 0.
+
+s = "loveleetcode",
+return 2.
+
+
+const firstUnique = (s)=>{
+
+    //map to store characters frequencies.
+   // s = "leetcode"  
+ 
+   // Map {l:1,e:3,t:1,c:1,o:1,d:1}
+ 
+  let hash = new Map();
+
+  for(let char of s){
+
+   if(!hash.has(char)){
+        hash.set(char,1);
+    }else{
+        hash.set(char,hash.get(char)+1);
+     }
+  }
+s = "leetcode" 
+  for(let i=0;i<s.length;i++){
+     Let char = s[i];
+    if(hash.get(char) == 1){
+         return i;
+     }
+  }
+ return -1;
+}
+
+
+
+
+
