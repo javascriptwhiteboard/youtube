@@ -1,0 +1,48 @@
+Majority Element
+ 
+ 
+Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+You may assume that the array is non-empty and the majority element always exists in the array.
+Example 1:
+Input: [3,2,3]//3
+Output: 3
+Example 2:
+Input: [2,2,1,1,1,2,2]
+Output: 2
+
+
+
+
+//Hashmap to add elements 
+// comparison
+
+const MajorityElement = (nums)=>{
+   
+    Let hash = new Map();//{key:value}
+    
+   for(num of nums){
+
+   if(!hash.has(num)){
+
+       hash.set(num,1);
+     }else{
+
+       hash.set(num,hash.get(num)+1);
+      }
+   }
+
+ let repeatedValue =1;
+ let repeatedNum = nums[0]
+//Input: [1,1,2,2,2,2,2]
+// Map{1:2,2:5}
+ for(let [key,value] of hash.entries()){
+       if(value > repeatedValue){
+            repeatedValue = value;//5
+            repeatedNum = key;//2
+        }
+
+  }
+
+return repeatedNum;
+
+}
